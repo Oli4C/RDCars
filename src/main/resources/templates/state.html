@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>List of States</title>
+  <title>State Management Page</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -432,6 +432,7 @@
                     <th>Id</th>
                     <th>State</th>
                     <th>Code</th>
+                    <th>Country</th>
                     <th>Capital</th>
                     <th>Details</th>
                     <th>Action</th>
@@ -440,6 +441,7 @@
 					<td th:text="${state.id}">Id</td>
 					<td th:text="${state.name}">State</td>
 					<td th:text="${state.code}">Code</td>
+					<td th:text="${state.country.getDescription}">Country</td>
 					<td th:text="${state.capital}">Capital</td>
 					<td th:text="${state.details}">Details</td>
                     <td>
@@ -608,7 +610,7 @@
 
           <div class="form-group">
 		    <label for="ddlCountryDetails" class="col-form-label">Country: </label>
-			    <select class="form-control" id="ddlCountryDetails" name="countryid">
+			    <select class="form-control" id="ddlCountryDetails" name="countryid" readonly>
 			       <option>-SELECT-</option>			    
 			       <option th:each="country : ${countries}"
 				        th:value="${country.id}"
@@ -624,12 +626,12 @@
                     
          <div class="form-group">
             <label for="codeDetails" class="col-form-label">Code:</label>
-            <input type="text" class="form-control" id="codeDetails" name="code" required>
+            <input type="text" class="form-control" id="codeDetails" name="code" readonly>
           </div>
           
           <div class="form-group">
             <label for="capitalDetails" class="col-form-label">Capital:</label>
-            <input type="text" class="form-control" id="capitalDetails" name="capital" required>
+            <input type="text" class="form-control" id="capitalDetails" name="capital" readonly>
           </div> 
                     
           <div class="form-group">

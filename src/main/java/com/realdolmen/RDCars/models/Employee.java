@@ -1,37 +1,32 @@
 package com.realdolmen.RDCars.models;
-
-import java.util.Date;
-
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import javax.persistence.*;
+import java.time.LocalDate;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@Entity
 @Data
-@EqualsAndHashCode(callSuper=false)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class Employee extends Person {
-		
-	@ManyToOne
-	@JoinColumn(name="employeetypeid", insertable=false, updatable=false)
-	private EmployeeType employeeType;
-	private Integer employeetypeid;
-	private String photo;
-	private String username;
-	
-	@ManyToOne
-	@JoinColumn(name="jobtitleid", insertable=false, updatable=false)
-	private JobTitle jobTitle;
-	private Integer jobtitleid;
-	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")	
-	private Date hireDate;
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private int age;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate hireDate;
+    private String functionalLevel;
+
+    @OneToOne
+    private UsedCar currentCar;
+
+
 }

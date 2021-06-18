@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Contact Register</title>
+  <title>RD Cars - Contact Management</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -410,11 +410,11 @@
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-table"></i> Table</h3>
+            <h3 class="page-header"><i class="fa fa-table"></i>List of Contacts</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-              <li><i class="fa fa-table"></i>Table</li>
-              <li><i class="fa fa-th-list"></i>Basic Table</li>
+                <li><i class="fa fa-home"></i><a class="" th:href="@{/index}">Home</a></li>
+                <li><i class="fa fa-bars"></i>People</li>
+                <li><i class="fa fa-square-o"></i>Contacts</li>
             </ol>
           </div>
         </div>
@@ -423,18 +423,16 @@
         <div class="row">
           <div class="col-lg-12">
             <section class="panel">
-              <header class="panel-heading">
-                Advanced Table
-              </header>
+
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add New</button>
 
               <table class="table table-striped table-advance table-hover">
                 <tbody>
                   <tr>
-                    <th><i class="icon_profile"></i> Name</th>
-                    <th><i class="icon_mail_alt"></i> Email</th>
-                    <th><i class="icon_mobile"></i> Phone</th>
-                    <th><i class="icon_cogs"></i> Action</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Action</th>
                   </tr>
 				 <tr th:each="contact:${contacts}">
 					<td th:text="${contact.firstname} + ' ' + ${contact.lastname}">Name</td>

@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.realdolmen.RDCars.models.User;
 import com.realdolmen.RDCars.services.UserService;
-import com.realdolmen.RDCars.services.CountryService;
-import com.realdolmen.RDCars.services.UserService;
 
 @Controller
 public class UserController {
