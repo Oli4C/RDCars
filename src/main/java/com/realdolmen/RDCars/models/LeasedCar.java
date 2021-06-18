@@ -5,11 +5,11 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "NewCar")
+@Table(name = "leased_car")
 @Data
 
 
-public class UsedCar {
+public class LeasedCar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
